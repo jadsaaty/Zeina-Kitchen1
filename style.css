@@ -191,7 +191,7 @@ footer{
 .card:hover{
   transform: scale(1.05);
   transition: transform 0.3s ease;
-  color:#ff0000;
+  color:#dd00ff;
 }
 .card .image-cube {
   width: 220px;
@@ -254,4 +254,5 @@ footer{
 .contact a:hover ,.emailAndPhone p:hover{
  
   color:#9f4cf3; 
+
 }
