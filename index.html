@@ -16,19 +16,16 @@
  header{padding:28px 20px;text-align:left}
     .logo-row{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
 .logo{font-size:36px;margin:0;  font-weight:800;
-  color:var(--dark-blue);
-      
+  color:var(--dark-blue);   
 }
-    .logo-real{
+.logo-real{
   width: 83px;
   height: auto;
-
 }
 .logo-blue{color:var(--accent)}
 
     
-    
-    /* MATCHING POPUP DESIGN */
+/* ================= POPUP ================= */
 .popup {
   position: fixed;
   top: 0;
@@ -60,23 +57,19 @@
   height: 200px;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
   margin-bottom: 15px;
 }
 
-/* NEW X BUTTON */
+/* Close X */
 .close {
   position: absolute;
   top: 8px;
   right: 12px;
   font-size: 28px;
   cursor: pointer;
-  user-select: none;
 }
 
-
-
-/* CLEAN SHOP-STYLE CARDS */
+/* Cards */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -88,7 +81,6 @@
   from { transform: scale(0.7); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-
   </style>
 </head>
 
@@ -98,7 +90,7 @@
   <div class="logo-row">
     <a href="index.html" class="logo-section">
       <h1 class="logo">
-        <img src="https://i.ibb.co/SwZD2RvM/Logo.jpg" alt="Logo" border="0" class="logo-real">
+        <img src="https://i.ibb.co/SwZD2RvM/Logo.jpg" class="logo-real">
         <span class="logo-blue">Zeina</span>Kitchen
       </h1>
     </a>
@@ -107,7 +99,6 @@
 </header>
 
 
-<!-- CATEGORY BUTTONS -->
 <section class="categories">
   <h2>Categories</h2>
   <div class="buttons">
@@ -118,80 +109,72 @@
 </section>
 
 
-<!-- FEATURED PRODUCTS -->
 <section class="products">
   <h2>Featured Products</h2>
 
   <div class="product-grid">
 
-<!---Card 1-->
-   <article class="card" 
-         data-title="Kebbeh 2ras" 
-         data-price="$5.99/dozen" 
-         data-img="https://i.ibb.co/XZJcQtZ8/Kebbeh-kras.jpg">
+<!-- Card 1 -->
+<article class="card" 
+ data-title="Kebbeh 2ras" 
+ data-price="$5.99/dozen" 
+ data-img="https://i.ibb.co/XZJcQtZ8/Kebbeh-kras.jpg">
 
-      <div class="image-cube">
-      <img src="https://i.ibb.co/XZJcQtZ8/Kebbeh-kras.jpg">
-      </div>
+  <div class="image-cube">
+    <img src="https://i.ibb.co/XZJcQtZ8/Kebbeh-kras.jpg">
+  </div>
 
-      <h3>Kebbeh 2ras</h3>
-      <p class="price">$5.99/dozen</p>
+  <h3>Kebbeh 2ras</h3>
+  <p class="price">$5.99/dozen</p>
 
-      <button class="add-to-cart-btn">Add to Cart</button>
+  <button class="add-to-cart-btn">Add to Cart</button>
+</article>
 
-   </article>
-   
 
-  <!---Card 2-->
-   <article class="card" 
-         data-title="Pizza (Small Pieces)" 
-         data-price="$2.99/dozen" 
-         data-img="https://i.ibb.co/93ZfvbW4/Pizza-small-pieces.jpg">
+<!-- Card 2 -->
+<article class="card" 
+ data-title="Pizza (Small Pieces)" 
+ data-price="$2.99/dozen" 
+ data-img="https://i.ibb.co/93ZfvbW4/Pizza-small-pieces.jpg">
 
-      <div class="image-cube">
-      <img src="https://i.ibb.co/93ZfvbW4/Pizza-small-pieces.jpg" alt="Pizza small pieces" border="0"></a>
-      </div>
+  <div class="image-cube">
+    <img src="https://i.ibb.co/93ZfvbW4/Pizza-small-pieces.jpg">
+  </div>
 
-      <h3>Pizza (Small Pieces)</h3>
-      <p class="price">$2.99/dozen</p>
+  <h3>Pizza (Small Pieces)</h3>
+  <p class="price">$2.99/dozen</p>
 
-      <button class="add-to-cart-btn">Add to Cart</button>
+  <button class="add-to-cart-btn">Add to Cart</button>
+</article>
 
-   </article>
-   
-   <!---Card 3-->
-   <article class="card" 
-         data-title="Sfeeha Baalbakiyye" 
-         data-price="$3.5/dozen" 
-         data-img="https://i.ibb.co/gLkst0kS/sfeeha-b3abakiyye.jpg">
 
-      <div class="image-cube">
-        <img src="https://i.ibb.co/gLkst0kS/sfeeha-b3abakiyye.jpg">
-      </div>
+<!-- Card 3 -->
+<article class="card" 
+ data-title="Sfeeha Baalbakiyye" 
+ data-price="$3.5/dozen" 
+ data-img="https://i.ibb.co/gLkst0kS/sfeeha-b3abakiyye.jpg">
 
-      <h3>Sfeeha Baalbakiyye</h3>
-      <p class="price">$3.5/dozen</p>
+  <div class="image-cube">
+    <img src="https://i.ibb.co/gLkst0kS/sfeeha-b3abakiyye.jpg">
+  </div>
 
-      <button class="add-to-cart-btn">Add to Cart</button>
+  <h3>Sfeeha Baalbakiyye</h3>
+  <p class="price">$3.5/dozen</p>
 
-   </article>
+  <button class="add-to-cart-btn">Add to Cart</button>
+</article>
 
-   
-
-  
 </section>
 
 
 
-<!-- POPUP WINDOW -->
+<!-- POPUP -->
 <div id="popup" class="popup">
   <div class="popup-content">
-
-    <!-- NEW X BUTTON -->
     <span class="close" id="closeX">&times;</span>
 
     <h2 id="popupTitle"></h2>
-    <img id="popupImg" src="">
+    <img id="popupImg">
     <p id="popupText"></p>
     <p id="popupPrice"></p>
 
@@ -199,8 +182,8 @@
   </div>
 </div>
 
-
 <br><br><br>
+
 
 <!-- CONTACT -->
 <section class="contactcontainer">
@@ -210,14 +193,14 @@
   </div>
 
   <div class="contact">
-    <img src="https://i.ibb.co/rRsB1PRb/Email.jpg" alt="Email" border="0">
+    <img src="https://i.ibb.co/rRsB1PRb/Email.jpg">
     <a href="mailto:zeinakitchen25@gmail.com">zeinakitchen25@gmail.com</a>
   </div>
 
   <div class="emailAndPhone">
     <p>For your orders | لطلباتكم
       <a href="https://wa.me//+96171085509" target="_blank">
-        <img src="https://i.ibb.co/cX67GPXR/phone.jpg" alt="phone" border="0">
+        <img src="https://i.ibb.co/cX67GPXR/phone.jpg">
       </a>
     </p>
   </div>
@@ -229,68 +212,76 @@
   <p>© <span id="year"></span> Zeina Kitchen</p>
 </footer>
 
-<!-- POPUP SCRIPT -->
+
+
+<!-- ================= FIXED POPUP SCRIPT ================= -->
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", () => {
 
-const popup = document.getElementById("popup");
-const popupTitle = document.getElementById("popupTitle");
-const popupText = document.getElementById("popupText");
-const popupPrice = document.getElementById("popupPrice");
-const popupImg = document.getElementById("popupImg");
-const closeX = document.getElementById("closeX");
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-// We store the current product when popup opens
-let currentProduct = null;
+  const popup = document.getElementById("popup");
+  const popupTitle = document.getElementById("popupTitle");
+  const popupText = document.getElementById("popupText");
+  const popupPrice = document.getElementById("popupPrice");
+  const popupImg = document.getElementById("popupImg");
+  const closeX = document.getElementById("closeX");
 
-// OPEN popup when card is clicked
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("click", () => {
+  let currentProduct = null;
 
-    currentProduct = {
-      title: card.dataset.title,
-      desc: card.dataset.desc || "",
-      price: card.dataset.price || "",
-      img: card.dataset.img || ""
-    };
+  /* ================= Open popup ONLY when clicking the card ================= */
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
 
-    popupTitle.textContent = currentProduct.title;
-    popupText.textContent = currentProduct.desc;
-    popupPrice.textContent = currentProduct.price;
-    popupImg.src = currentProduct.img;
+      currentProduct = {
+        title: card.dataset.title,
+        desc: card.dataset.desc || "",
+        price: card.dataset.price,
+        img: card.dataset.img
+      };
 
-    popup.style.display = "flex";
+      popupTitle.textContent = currentProduct.title;
+      popupText.textContent = currentProduct.desc;
+      popupPrice.textContent = currentProduct.price;
+      popupImg.src = currentProduct.img;
+
+      popup.style.display = "flex";
+    });
   });
-});
 
-// NEW X BUTTON CLOSE ONLY
-closeX.addEventListener("click", () => {
-  popup.style.display = "none";
-});
-
-// NORMAL ADD-TO-CART buttons inside cards
-document.querySelectorAll(".card .add-to-cart-btn").forEach(btn => {
-  btn.addEventListener("click", e => {
-    e.stopPropagation();
-    const card = btn.closest(".card");
-    const title = card.dataset.title;
-    alert(title + " added to cart (demo).");
+  /* ================= Prevent button from opening popup ================= */
+  document.querySelectorAll(".card .add-to-cart-btn").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation(); // <-- IMPORTANT FIX
+      const card = btn.closest(".card");
+      alert(card.dataset.title + " added to cart (demo).");
+    });
   });
-});
 
-// POPUP Add-To-Cart button
-document.querySelector("#popup .add-to-cart-btn").addEventListener("click", () => {
-  if (currentProduct) {
-    alert(currentProduct.title + " added to cart (demo).");
-  }
-});
+  /* ================= Popup Add-To-Cart ================= */
+  document.querySelector("#popup .add-to-cart-btn").addEventListener("click", () => {
+    if (currentProduct) {
+      alert(currentProduct.title + " added to cart (demo).");
+    }
+  });
 
+  /* ================= Close popup ================= */
+  closeX.addEventListener("click", () => popup.style.display = "none");
+
+  window.addEventListener("click", e => {
+    if (e.target === popup) popup.style.display = "none";
+  });
+
+  window.addEventListener("keydown", e => {
+    if (e.key === "Escape") popup.style.display = "none";
+  });
+
+});
 </script>
 
 
 
-
-<!-- SEARCH SCRIPT -->
+<!-- SEARCH SYSTEM -->
 <script>
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".card");
@@ -303,28 +294,8 @@ searchInput.addEventListener("keyup", () => {
     card.style.display = text.includes(q) ? "flex" : "none";
   });
 });
-// ESC key closes popup
-window.addEventListener("keydown", e => {
-  if (e.key === "Escape") {
-    popup.style.display = "none";
-    popup.setAttribute("aria-hidden", "true");
-  }
-});
-window.addEventListener('click', (e) => {
-  if (e.target === popup) {
-    popup.style.display = 'none';
-    popup.setAttribute('aria-hidden','true');
-  }
-});
-
 </script>
 
 
 </body>
 </html>
-
-
-
-
-
-
