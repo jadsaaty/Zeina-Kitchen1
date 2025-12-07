@@ -266,16 +266,20 @@ popupAddBtn.addEventListener("click", () => {
 });
 
 
-// ===== CARD ADD-TO-CART (NOT POPUP) =====
+// Normal ADD-TO-CART buttons inside cards
 document.querySelectorAll(".card .add-to-cart-btn").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent card from opening popup
-
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
     const card = btn.closest(".card");
     const title = card.dataset.title;
-
     alert(title + " added to cart (demo).");
   });
+});
+// POPUP Add-To-Cart button
+document.querySelector("#popup .add-to-cart-btn").addEventListener("click", () => {
+  if (currentProduct) {
+    alert(currentProduct.title + " added to cart (demo).");
+  }
 });
 </script>
 <script>
@@ -599,5 +603,6 @@ footer{
 </style>
 
 </html>
+
 
 
