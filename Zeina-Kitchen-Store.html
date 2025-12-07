@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zeina Kitchen</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <div class="search-wrapper">
+    <input id="searchInput" type="text" class="search-input" placeholder="Search..." />
+  </div>
+
+  <style>
+ /* MATCHING POPUP DESIGN */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  position: relative;
+  background: var(--card);
+  color: white;
+  padding: 25px;
+  border-radius: 16px;
+  width: 380px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  animation: popIn 0.25s ease;
+}
+
+.popup-content img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  margin-bottom: 15px;
+}
+
+/* NEW X BUTTON */
+.close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+/* CLEAN SHOP-STYLE CARDS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  margin-top: 20px;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+  </style>
+</head>
+
+<body class="dark-mode">
+
+<header>
+  <div class="logo-row">
+    <a href="Zeina-Kitchen-Store.html" class="logo-section">
+      <h1 class="logo">
+        <img src="Logo.jpeg" class="logo-real">
+        <span class="logo-blue">Zeina</span>Kitchen
+      </h1>
+    </a>
+  </div>
+  <p class="tag">Le2metna taybe w gher shekel | لقمتنا طيبة وغير شكل</p>
+</header>
+
+
+<!-- CATEGORY BUTTONS -->
+<section class="categories">
+  <h2>Categories</h2>
+  <div class="buttons">
+    <a href="Appetizers.html" class="cat-btn">Appetizers</a>
+    <a href="Dishes.html" class="cat-btn">Dishes</a>
+     <a href="Sweets.html" class="cat-btn">Sweets</a>
+  </div>
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+<section class="products">
+  <h2>Featured Products</h2>
+
+  <div class="product-grid">
+
+<!---Card 1-->
+   <article class="card" 
+         data-title="Kebbeh 2ras" 
+         data-price="$5.99/dozen" 
+         data-img="https://i.ibb.co/XZJcQtZ8/Kebbeh-kras.jpg">
+
+      <div class="image-cube">
+      <img src="https://i.ibb.co/XZJcQtZ8/Kebbeh-kras.jpg">
+      </div>
+
+      <h3>Kebbeh 2ras</h3>
+      <p class="price">$5.99/dozen</p>
+
+      <button class="add-to-cart-btn">Add to Cart</button>
+
+   </article>
+   
+
+  <!---Card 2-->
+   <article class="card" 
+         data-title="Pizza (Small Pieces)" 
+         data-price="$2.99/dozen" 
+         data-img="https://i.ibb.co/93ZfvbW4/Pizza-small-pieces.jpg">
+
+      <div class="image-cube">
+      <img src="https://i.ibb.co/93ZfvbW4/Pizza-small-pieces.jpg" alt="Pizza small pieces" border="0"></a>
+      </div>
+
+      <h3>Pizza (Small Pieces)</h3>
+      <p class="price">$2.99/dozen</p>
+
+      <button class="add-to-cart-btn">Add to Cart</button>
+
+   </article>
+   
+   <!---Card 3-->
+   <article class="card" 
+         data-title="Sfeeha Baalbakiyye" 
+         data-price="$3.5/dozen" 
+         data-img="https://i.ibb.co/gLkst0kS/sfeeha-b3abakiyye.jpg">
+
+      <div class="image-cube">
+        <img src="https://i.ibb.co/gLkst0kS/sfeeha-b3abakiyye.jpg">
+      </div>
+
+      <h3>Sfeeha Baalbakiyye</h3>
+      <p class="price">$3.5/dozen</p>
+
+      <button class="add-to-cart-btn">Add to Cart</button>
+
+   </article>
+
+   
+
+  
+</section>
+
+
+
+<!-- POPUP WINDOW -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+
+    <!-- NEW X BUTTON -->
+    <span class="close" id="closeX">&times;</span>
+
+    <h2 id="popupTitle"></h2>
+    <img id="popupImg" src="">
+    <p id="popupText"></p>
+    <p id="popupPrice"></p>
+
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </div>
+</div>
+
+
+<br><br><br>
+
+<!-- CONTACT -->
+<section class="contactcontainer">
+  <div class="contacttitle">
+    <h1>Contact</h1>
+    <h1>Us</h1>
+  </div>
+
+  <div class="contact">
+    <img src="Email.svg" alt="email logo">
+    <a href="mailto:zeinakitchen25@gmail.com">zeinakitchen25@gmail.com</a>
+  </div>
+
+  <div class="emailAndPhone">
+    <p>For your orders | لطلباتكم
+      <a href="https://wa.me//+96171085509" target="_blank">
+        <img src="phone.svg">
+      </a>
+    </p>
+  </div>
+</section>
+
+<hr>
+
+<footer>
+  <p>© <span id="year"></span> Zeina Kitchen</p>
+</footer>
+
+<!-- POPUP SCRIPT -->
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const popup = document.getElementById("popup");
+const popupTitle = document.getElementById("popupTitle");
+const popupText = document.getElementById("popupText");
+const popupPrice = document.getElementById("popupPrice");
+const popupImg = document.getElementById("popupImg");
+const closeX = document.getElementById("closeX");
+
+// We store the current product when popup opens
+let currentProduct = null;
+
+// OPEN popup when card is clicked
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("click", () => {
+
+    currentProduct = {
+      title: card.dataset.title,
+      desc: card.dataset.desc || "",
+      price: card.dataset.price || "",
+      img: card.dataset.img || ""
+    };
+
+    popupTitle.textContent = currentProduct.title;
+    popupText.textContent = currentProduct.desc;
+    popupPrice.textContent = currentProduct.price;
+    popupImg.src = currentProduct.img;
+
+    popup.style.display = "flex";
+  });
+});
+
+// NEW X BUTTON CLOSE ONLY
+closeX.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+// NORMAL ADD-TO-CART buttons inside cards
+document.querySelectorAll(".card .add-to-cart-btn").forEach(btn => {
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    const card = btn.closest(".card");
+    const title = card.dataset.title;
+    alert(title + " added to cart (demo).");
+  });
+});
+
+// POPUP Add-To-Cart button
+document.querySelector("#popup .add-to-cart-btn").addEventListener("click", () => {
+  if (currentProduct) {
+    alert(currentProduct.title + " added to cart (demo).");
+  }
+});
+
+</script>
+
+
+
+
+<!-- SEARCH SCRIPT -->
+<script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("keyup", () => {
+  const q = searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(q) ? "flex" : "none";
+  });
+});
+// ESC key closes popup
+window.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    popup.style.display = "none";
+    popup.setAttribute("aria-hidden", "true");
+  }
+});
+window.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
+    popup.setAttribute('aria-hidden','true');
+  }
+});
+
+</script>
+
+
+</body>
+</html>
