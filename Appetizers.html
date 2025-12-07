@@ -215,7 +215,22 @@ const popupAddBtn = document.querySelector("#popup .add-to-cart-btn");
 let currentProduct = null;
 
 
-// ===== OPEN POPUP =====
+<script>
+// ===== POPUP ELEMENTS =====
+const popup = document.getElementById("popup");
+const closeX = document.getElementById("closeX");
+
+const popupTitle = document.getElementById("popupTitle");
+const popupImg = document.getElementById("popupImg");
+const popupPrice = document.getElementById("popupPrice");
+const popupAddBtn = document.querySelector("#popup .add-to-cart-btn");
+
+let currentProduct = null;
+
+
+// ===============================
+// OPEN POPUP WHEN CARD IS CLICKED
+// ===============================
 document.querySelectorAll(".card").forEach(card => {
   card.addEventListener("click", () => {
     const title = card.dataset.title;
@@ -229,20 +244,23 @@ document.querySelectorAll(".card").forEach(card => {
 
     popupImg.src = img;
     popupImg.alt = title;
-    popupImg.style.display = "block";
 
     popup.style.display = "flex";
   });
 });
 
 
-// ===== CLOSE POPUP (X BUTTON) =====
+// ===============================
+// CLOSE POPUP (X BUTTON)
+// ===============================
 closeX.addEventListener("click", () => {
   popup.style.display = "none";
 });
 
 
-// ===== CLOSE WHEN CLICKING OUTSIDE =====
+// ===============================
+// CLOSE POPUP ON OUTSIDE CLICK
+// ===============================
 window.addEventListener("click", (e) => {
   if (e.target === popup) {
     popup.style.display = "none";
@@ -250,7 +268,9 @@ window.addEventListener("click", (e) => {
 });
 
 
-// ===== CLOSE WITH ESC KEY =====
+// ===============================
+// CLOSE POPUP WITH ESC KEY
+// ===============================
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     popup.style.display = "none";
@@ -258,7 +278,9 @@ window.addEventListener("keydown", (e) => {
 });
 
 
-// ===== POPUP ADD-TO-CART BUTTON =====
+// ===============================
+// ADD TO CART — FROM POPUP
+// ===============================
 popupAddBtn.addEventListener("click", () => {
   if (currentProduct) {
     alert(currentProduct.title + " added to cart (demo).");
@@ -266,22 +288,42 @@ popupAddBtn.addEventListener("click", () => {
 });
 
 
-// Normal ADD-TO-CART buttons inside cards
+// ===============================
+// ADD TO CART — FROM CARD BUTTONS
+// ===============================
 document.querySelectorAll(".card .add-to-cart-btn").forEach(btn => {
   btn.addEventListener("click", e => {
-    e.stopPropagation();
+    e.stopPropagation(); // prevents opening popup
     const card = btn.closest(".card");
     const title = card.dataset.title;
     alert(title + " added to cart (demo).");
   });
 });
-// POPUP Add-To-Cart button
-document.querySelector("#popup .add-to-cart-btn").addEventListener("click", () => {
-  if (currentProduct) {
-    alert(currentProduct.title + " added to cart (demo).");
-  }
+
+
+// ===============================
+// SEARCH FUNCTION
+// ===============================
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("keyup", () => {
+  const query = searchInput.value.toLowerCase();
+
+  cards.forEach(card => {
+    const title = card.querySelector("h3").textContent.toLowerCase();
+    const desc = card.querySelector(".desc")?.textContent.toLowerCase() || "";
+    const price = card.querySelector(".price").textContent.toLowerCase();
+
+    if (title.includes(query) || desc.includes(query) || price.includes(query)) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
 });
 </script>
+
 <script>
 
    
@@ -335,33 +377,6 @@ document.querySelector("#popup .add-to-cart-btn").addEventListener("click", () =
   }
 });
 
-
-</script>
-<script>
-// --- SEARCH FUNCTION ---
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
-
-searchInput.addEventListener("keyup", function () {
-    const query = searchInput.value.toLowerCase();
-
-    cards.forEach(card => {
-        const title = card.querySelector("h3").textContent.toLowerCase();
-        const desc = card.querySelector(".desc").textContent.toLowerCase();
-        const price = card.querySelector(".price").textContent.toLowerCase();
-
-        // Show or hide card depending on search
-        if (
-            title.includes(query) ||
-            desc.includes(query) ||
-            price.includes(query)
-        ) {
-            card.style.display = "flex";
-        } else {
-            card.style.display = "none";
-        }
-    });
-});
 
 </script>
 
@@ -603,6 +618,7 @@ footer{
 </style>
 
 </html>
+
 
 
 
