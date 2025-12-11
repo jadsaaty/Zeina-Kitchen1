@@ -566,61 +566,6 @@ document.querySelectorAll(".card .add-to-cart-btn").forEach(btn => {
 });
 </script>
 <script>
-
-   
-
-    popup.style.display = 'flex';
-    popup.setAttribute('aria-hidden','false');
-
-
-  document.querySelectorAll('.view-btn').forEach(btn => {
-    btn.addEventListener('click', () => openPopupFromButton(btn));
-  });
-
-  // close handlers
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-    popup.setAttribute('aria-hidden','true');
-  });
-
-  popupImg.src = "#";
-popupImg.style.display = "none";
-
-
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-      popup.setAttribute('aria-hidden','true');
-    }
-  });
-
-  // keyboard: ESC to close
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popup.style.display === 'flex') {
-      popup.style.display = 'none';
-      popup.setAttribute('aria-hidden','true');
-    }
-  });
-  // NORMAL ADD-TO-CART buttons inside cards
-document.querySelectorAll(".card .add-to-cart-btn").forEach(btn => {
-  btn.addEventListener("click", e => {
-    e.stopPropagation();
-    const card = btn.closest(".card");
-    const title = card.dataset.title;
-    alert(title + " added to cart (demo).");
-  });
-});
-
-// POPUP Add-To-Cart button
-document.querySelector("#popup .add-to-cart-btn").addEventListener("click", () => {
-  if (currentProduct) {
-    alert(currentProduct.title + " added to cart (demo).");
-  }
-});
-
-
-</script>
-<script>
 // --- SEARCH FUNCTION ---
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".card");
@@ -887,21 +832,3 @@ footer{
 </style>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
